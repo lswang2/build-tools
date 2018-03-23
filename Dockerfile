@@ -40,6 +40,7 @@ RUN         rm -f /tmp/${FILE}
 
 WORKDIR     /root
 RUN         cat /tmp/path.txt >> .bashrc
+RUN         rm -f /tmp/path.txt
 
 VOLUME      /work
 
