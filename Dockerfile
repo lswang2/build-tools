@@ -24,14 +24,12 @@ FROM        lswang2/base:latest
 MAINTAINER  wang@picocel.com
 
 USER        root
-ENV         VERSION=1.2.3
+ENV         VERSION=1.2.4
 ENV         FILE=or1k_tool_chain_wang_v${VERSION}.txz
 ENV         URL=https://github.com/lswang2/binutils-gdb/releases/download/${VERSION}/${FILE}
-ENV         URL2=https://github.com/lswang2/binutils-gdb/releases/download/${VERSION}/path.txt
 
 WORKDIR     /tmp
 RUN         wget ${URL}
-RUN         wget ${URL2}
 
 WORKDIR     /usr/local
 RUN         tar Jxvf /tmp/${FILE}
@@ -39,11 +37,11 @@ RUN         tar Jxvf /tmp/${FILE}
 RUN         rm -f /tmp/${FILE}
 
 WORKDIR     /root
-RUN         cat /tmp/path.txt >> .bashrc
-RUN         rm -f /tmp/path.txt
 
 VOLUME      /work
 
 WORKDIR     /work
+
+RUN         echo "export PATH=$PATH:/usr/local/or1k/bin" >> /root/.bashrc
 
 ENTRYPOINT ["/bin/bash"]
