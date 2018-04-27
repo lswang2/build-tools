@@ -44,4 +44,4 @@ WORKDIR     /work
 
 RUN         echo "export PATH=$PATH:/usr/local/or1k/bin" >> /root/.bashrc
 
-ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/bin/bash"]
