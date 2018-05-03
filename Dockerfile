@@ -42,6 +42,7 @@ VOLUME      /work
 
 WORKDIR     /work
 
+RUN         echo "alias list=\"or1k-elf-gcc -Wa,-adhln -g\"" >> /root/.bashrc
 RUN         echo "export PATH=$PATH:/usr/local/or1k/bin" >> /root/.bashrc
 
 #ENTRYPOINT ["/bin/bash"]
