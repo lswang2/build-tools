@@ -24,7 +24,7 @@ FROM        lswang2/base:latest
 MAINTAINER  wang@picocel.com
 
 USER        root
-ENV         VERSION=1.2.4
+ENV         VERSION=1.2.6
 ENV         FILE=or1k_tool_chain_wang_v${VERSION}.txz
 ENV         URL=https://github.com/lswang2/binutils-gdb/releases/download/${VERSION}/${FILE}
 
