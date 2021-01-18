@@ -33,8 +33,11 @@ ENV         PATH="/usr/local/or1k/bin:${PATH}"
 WORKDIR     /tmp
 RUN         wget ${URL}
 
+
 WORKDIR     /usr/local
 RUN         tar Jxvf /tmp/${FILE}
+RUN         wget 'https://raw.githubusercontent.com/lswang2/build-tools/master/bin2sfbin.py' -O /usr/local/or1k/bin/bin2sfbin.py
+RUN         chmod +x /usr/local/or1k/bin/bin2sfbin.py
 
 RUN         rm -f /tmp/${FILE}
 
